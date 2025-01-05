@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://64.23.239.3:4000",
+    "target": "https://shark-app-2-ogevj.ondigitalocean.app",
     "secure": false,
     "changeOrigin": true
   }

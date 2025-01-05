@@ -15,7 +15,7 @@ import autoTable from 'jspdf-autotable';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
-  private apiUrl = 'http://64.23.239.3:4000/api';
+  private apiUrl = 'https://shark-app-2-ogevj.ondigitalocean.app/api';
   finca: string = '';
   owner: string = '';
   phone: string = '';

@@ -26,7 +26,7 @@ export class FitosanitariosComponent implements OnInit{
   };
 
   currentUser: any = null;
-  private apiUrl = 'http://64.23.239.3:4000/api';
+  private apiUrl = 'https://shark-app-2-ogevj.ondigitalocean.app/api';
 
   constructor(
     private router: Router,

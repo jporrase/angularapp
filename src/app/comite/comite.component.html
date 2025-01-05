@@ -1,0 +1,43 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  style="width: 600px; margin: 0 auto; font-family: Arial, sans-serif;"
+>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <label style="font-size: 24px; font-weight: bold;">COMITÉ</label>
+  </div>
+
+  <!-- Radio button options -->
+  <div
+    *ngFor="let option of options; let i = index"
+    style="margin-bottom: 10px;"
+  >
+    <div
+      style="display: flex; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff;"
+    >
+      <input
+        id="{{ option }}"
+        name="committee"
+        type="radio"
+        [(ngModel)]="selectedCommittee"
+        [value]="option"
+        style="margin-right: 10px;"
+        required
+      />
+      <label for="{{ option }}" style="font-weight: bold;">{{ option }}</label>
+    </div>
+  </div>
+
+  <div *ngIf="form.submitted && !selectedCommittee">
+    <p style="color: red; text-align: center;">Please select one committee.</p>
+  </div>
+
+  <!-- Submit button -->
+  <button
+    type="submit"
+    [disabled]="form.invalid"
+    style="background-color: #4d4d00; color: white; width: 100%; padding: 10px; font-weight: bold; border-radius: 5px; margin-top: 20px;"
+  >
+    INGRESAR
+  </button>
+</form>

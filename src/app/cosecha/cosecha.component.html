@@ -1,0 +1,142 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  style="width: 600px; margin: 0 auto; font-family: Arial, sans-serif;"
+>
+  <!-- Title -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <label style="font-size: 24px; font-weight: bold;">COSECHA</label>
+  </div>
+
+  <!-- Form Fields -->
+  <div style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Fecha -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="fecha" style="font-weight: bold;">FECHA</label>
+      <input
+        type="date"
+        id="fecha"
+        name="fecha"
+        [(ngModel)]="cosechaForm.fecha"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Nombre del Sector -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="sector" style="font-weight: bold;">NOMBRE DEL SECTOR</label>
+      <input
+        type="text"
+        id="sector"
+        name="sector"
+        [(ngModel)]="cosechaForm.sector"
+        placeholder="Enter sector name"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Cantidad de Fruto en Lbs -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="cantidadFruto" style="font-weight: bold;"
+        >CANTIDAD DE FRUTO EN Lbs.</label
+      >
+      <input
+        type="text"
+        id="cantidadFruto"
+        name="cantidadFruto"
+        [(ngModel)]="cosechaForm.cantidadFruto"
+        placeholder="Enter quantity"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Lbs. Fruto Rechazado -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="frutoRechazado" style="font-weight: bold;"
+        >Lbs. FRUTO RECHAZADO</label
+      >
+      <input
+        type="text"
+        id="frutoRechazado"
+        name="frutoRechazado"
+        [(ngModel)]="cosechaForm.frutoRechazado"
+        placeholder="Enter rejected weight"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Peso Promedio Aguacate -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="pesoPromedio" style="font-weight: bold;"
+        >PESO PROMEDIO AGUACATE</label
+      >
+      <input
+        type="text"
+        id="pesoPromedio"
+        name="pesoPromedio"
+        [(ngModel)]="cosechaForm.pesoPromedio"
+        placeholder="Enter average weight"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Nombre de Lote de Cosecha -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="loteCosecha" style="font-weight: bold;"
+        >NOMBRE DE LOTE DE COSECHA</label
+      >
+      <input
+        type="text"
+        id="loteCosecha"
+        name="loteCosecha"
+        [(ngModel)]="cosechaForm.loteCosecha"
+        placeholder="Enter batch name"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Foto -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="foto" style="font-weight: bold;">FOTO</label>
+      <input
+        type="file"
+        id="foto"
+        name="foto"
+        [(ngModel)]="cosechaForm.foto"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    <button
+      type="button"
+      (click)="goBack()"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      REGRESAR
+    </button>
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      GUARDAR
+    </button>
+  </div>
+</form>

@@ -1,0 +1,95 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  style="width: 600px; margin: 0 auto; font-family: Arial, sans-serif;"
+>
+  <!-- Title -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <label style="font-size: 24px; font-weight: bold;">CONSUMO DE AGUA</label>
+  </div>
+
+  <!-- Form Fields -->
+  <div style="margin-bottom: 20px;">
+    <!-- Fecha de Riego -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"
+    >
+      <label for="fechaRiego" style="font-weight: bold;">FECHA DE RIEGO</label>
+      <input
+        type="text"
+        id="fechaRiego"
+        name="fechaRiego"
+        [(ngModel)]="consumoAguaForm.fechaRiego"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+        placeholder="Enter value"
+      />
+    </div>
+
+    <!-- Hora -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"
+    >
+      <label for="hora" style="font-weight: bold;">HORA</label>
+      <input
+        type="time"
+        id="hora"
+        name="hora"
+        [(ngModel)]="consumoAguaForm.hora"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Cantidad Agua Utilizada -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"
+    >
+      <label for="cantidadAguaUtilizada" style="font-weight: bold;"
+        >CANTIDAD AGUA UTILIZADA</label
+      >
+      <input
+        type="number"
+        id="cantidadAguaUtilizada"
+        name="cantidadAguaUtilizada"
+        [(ngModel)]="consumoAguaForm.cantidadAguaUtilizada"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+        min="0"
+        placeholder="Enter value"
+      />
+    </div>
+
+    <!-- Agua Para Plaguicidas -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"
+    >
+      <label for="aguaParaPlaguicidas" style="font-weight: bold;"
+        >AGUA PARA PLAGUICIDAS</label
+      >
+      <input
+        type="text"
+        id="aguaParaPlaguicidas"
+        name="aguaParaPlaguicidas"
+        [(ngModel)]="consumoAguaForm.aguaParaPlaguicidas"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+        placeholder="Enter value"
+      />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="display: flex; justify-content: space-between;">
+    <button
+      type="button"
+      (click)="goBack()"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      REGRESAR
+    </button>
+    <button
+    type="submit"
+    [disabled]="form.invalid"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      GUARDAR
+    </button>
+  </div>
+</form>

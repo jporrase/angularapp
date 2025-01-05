@@ -1,0 +1,146 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  style="width: 600px; margin: 0 auto; font-family: Arial, sans-serif;"
+>
+  <!-- Title -->
+  <div style="text-align: center;">
+    <label style="font-size: 24px; font-weight: bold;">CONTROL VISITAS</label>
+  </div>
+
+  <!-- Form Fields -->
+  <div
+    style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;"
+  >
+    <!-- Fecha de Visita -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="fechaVisita" style="font-weight: bold;"
+        >FECHA DE VISITA</label
+      >
+      <input
+        type="date"
+        id="fechaVisita"
+        name="fechaVisita"
+        [(ngModel)]="visitaForm.fechaVisita"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Hora de Llegada -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="horaLlegada" style="font-weight: bold;"
+        >HORA DE LLEGADA</label
+      >
+      <input
+        type="time"
+        id="horaLlegada"
+        name="horaLlegada"
+        [(ngModel)]="visitaForm.horaLlegada"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Hora de Salida -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="horaSalida" style="font-weight: bold;">HORA DE SALIDA</label>
+      <input
+        type="time"
+        id="horaSalida"
+        name="horaSalida"
+        [(ngModel)]="visitaForm.horaSalida"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Nombre del Visitante -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="nombreVisitante" style="font-weight: bold;"
+        >NOMBRE DEL VISITANTE</label
+      >
+      <input
+        type="text"
+        id="nombreVisitante"
+        name="nombreVisitante"
+        [(ngModel)]="visitaForm.nombreVisitante"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Número DPI -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="numeroDpi" style="font-weight: bold;">NUMERO DPI:</label>
+      <input
+        type="text"
+        id="numeroDpi"
+        name="numeroDpi"
+        [(ngModel)]="visitaForm.numeroDpi"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Cantidad de Personas en Vehículo -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="cantPersonasVehiculo" style="font-weight: bold;"
+        >CANT. PERSONAS EN VEHICULO</label
+      >
+      <input
+        type="number"
+        id="cantPersonasVehiculo"
+        name="cantPersonasVehiculo"
+        [(ngModel)]="visitaForm.cantPersonasVehiculo"
+        style="margin-left: 10px; flex: 1;"
+        min="1"
+      />
+    </div>
+
+    <!-- Tipo de Automóvil -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="tipoAutomovil" style="font-weight: bold;"
+        >TIPO DE AUTOMOVIL</label
+      >
+      <select
+        id="tipoAutomovil"
+        name="tipoAutomovil"
+        [(ngModel)]="visitaForm.tipoAutomovil"
+        style="margin-left: 10px; flex: 1;"
+      >
+        <option value="Moto">Moto</option>
+        <option value="Pickup">Pickup</option>
+        <option value="Carro">Carro</option>
+        <option value="Camion">Camión</option>
+      </select>
+    </div>
+
+    <!-- Número de Placas Vehículo -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="placasVehiculo" style="font-weight: bold;"
+        >NUMERO DE PLACAS VEHICULO</label
+      >
+      <input
+        type="text"
+        id="placasVehiculo"
+        name="placasVehiculo"
+        [(ngModel)]="visitaForm.placasVehiculo"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    <button
+      type="button"
+      (click)="goBack()"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      REGRESAR
+    </button>
+    <button
+          type="submit"
+    [disabled]="form.invalid"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      GUARDAR
+    </button>
+  </div>
+</form>

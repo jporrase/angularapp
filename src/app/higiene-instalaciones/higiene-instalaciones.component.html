@@ -1,0 +1,87 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  style="width: 600px; margin: 0 auto; font-family: Arial, sans-serif;"
+>
+  <!-- Title -->
+  <div style="text-align: center;">
+    <label style="font-size: 24px; font-weight: bold;"
+      >HIGIENE INSTALACIONES</label
+    >
+  </div>
+
+  <!-- Form Fields -->
+  <div
+    style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;"
+  >
+    <!-- Fecha -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="fecha" style="font-weight: bold;">FECHA</label>
+      <input
+        type="date"
+        id="fecha"
+        name="fecha"
+        [(ngModel)]="higieneForm.fecha"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Área Higienizada -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="areaHigienizada" style="font-weight: bold;"
+        >AREA HIGIENIZADA</label
+      >
+      <input
+        type="text"
+        id="areaHigienizada"
+        name="areaHigienizada"
+        [(ngModel)]="higieneForm.areaHigienizada"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Productos Utilizados -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="productosUtilizados" style="font-weight: bold;"
+        >PRODUCTOS UTILIZADOS</label
+      >
+      <input
+        type="text"
+        id="productosUtilizados"
+        name="productosUtilizados"
+        [(ngModel)]="higieneForm.productosUtilizados"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+
+    <!-- Foto -->
+    <div style="display: flex; justify-content: space-between;">
+      <label for="foto" style="font-weight: bold;">FOTO</label>
+      <input
+        type="file"
+        id="foto"
+        name="foto"
+        [(ngModel)]="higieneForm.foto"
+        style="margin-left: 10px; flex: 1;"
+      />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    <button
+      type="button"
+      (click)="goBack()"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      REGRESAR
+    </button>
+    <button
+    type="submit"
+    [disabled]="form.invalid"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      GUARDAR
+    </button>
+  </div>
+</form>

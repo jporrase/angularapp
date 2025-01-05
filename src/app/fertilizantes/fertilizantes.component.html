@@ -1,0 +1,115 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  style="width: 600px; margin: 0 auto; font-family: Arial, sans-serif;"
+>
+
+  <!-- Title -->
+  <div style="text-align: center; margin-bottom: 20px;">
+   
+      <label style="font-size: 24px; font-weight: bold;">FERTILIZANTES</label>
+   
+  </div>
+
+  <!-- Form Fields -->
+  <div style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Fecha de Aplicación -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="fechaAplicacion" style="font-weight: bold;"
+        >FECHA DE APLICACIÓN</label
+      >
+      <input
+        type="date"
+        id="fechaAplicacion"
+        name="fechaAplicacion"
+        [(ngModel)]="fertilizantesForm.fechaAplicacion"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Hora -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="hora" style="font-weight: bold;">HORA</label>
+      <input
+        type="time"
+        id="hora"
+        name="hora"
+        [(ngModel)]="fertilizantesForm.hora"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Producto Aplicado -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="productoAplicado" style="font-weight: bold;"
+        >PRODUCTO APLICADO</label
+      >
+      <input
+        type="text"
+        id="productoAplicado"
+        name="productoAplicado"
+        [(ngModel)]="fertilizantesForm.productoAplicado"
+        placeholder="Enter product"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Dosis / Mochila -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="dosisMochila" style="font-weight: bold;"
+        >DOSIS / MOCHILA</label
+      >
+      <input
+        type="number"
+        id="dosisMochila"
+        name="dosisMochila"
+        [(ngModel)]="fertilizantesForm.dosisMochila"
+        placeholder="Enter value"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+
+    <!-- Additional Fields -->
+    <!-- Repeat similar div structure for other fields such as Dosis / Tonel, Motivo Aplicación, etc. -->
+
+    <!-- Foto -->
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <label for="foto" style="font-weight: bold;">FOTO</label>
+      <input
+        type="file"
+        id="foto"
+        name="foto"
+        [(ngModel)]="fertilizantesForm.foto"
+        style="flex: 1; margin-left: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"
+      />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    <button
+      type="button"
+      (click)="goBack()"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      REGRESAR
+    </button>
+    <button
+    type="submit"
+    [disabled]="form.invalid"
+      style="background-color: #4d4d00; color: white; width: 30%; padding: 10px; font-weight: bold; border-radius: 5px;"
+    >
+      GUARDAR
+    </button>
+  </div>
+</form>

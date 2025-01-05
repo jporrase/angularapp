@@ -1,0 +1,90 @@
+<!-- Logo -->
+<div style="text-align: center; margin-bottom: 40px;">
+  <img
+    src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQlafXHcrQTZ8WHiVYU-3EL-HLkJL5fKYKqDWroXX7FPrQ9yq92"
+    alt="Farmer Logo"
+    width="250"
+  />
+</div>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <!-- Finca Name -->
+  <div>
+    <label for="finca">Finca Name</label>
+    <input id="finca" name="finca" [(ngModel)]="finca" required />
+    <div *ngIf="form.submitted && !finca">Finca Name is required</div>
+  </div>
+
+  <!-- Owner Name -->
+  <div>
+    <label for="owner">Owner Name</label>
+    <input id="owner" name="owner" [(ngModel)]="owner" required />
+    <div *ngIf="form.submitted && !owner">Owner Name is required</div>
+  </div>
+
+  <!-- Phone Number -->
+  <div>
+    <label for="phone">Phone Number</label>
+    <input id="phone" name="phone" [(ngModel)]="phone" type="tel" />
+  </div>
+
+  <!-- Email -->
+  <div>
+    <label for="email">Email</label>
+    <input id="email" name="email" [(ngModel)]="email" type="email" />
+    <div *ngIf="form.submitted && !email">Email is required</div>
+  </div>
+
+  <!-- Password -->
+  <div>
+    <label for="password">Password</label>
+    <input
+      id="password"
+      name="password"
+      [(ngModel)]="password"
+      type="password"
+      required
+    />
+    <div *ngIf="form.submitted && !password">Password is required</div>
+  </div>
+
+  <!-- Error message for requiring either phone or email -->
+  <div *ngIf="form.submitted && !phone && !email">
+    Either phone number or email is required.
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="form.invalid || (!phone && !email)">
+    Log In
+  </button>
+
+  <!-- Sign Up and Password Reset Buttons -->
+  <div style="margin-top: 20px;">
+    <button type="button" (click)="onSignUp()">Sign Up</button>
+    <!-- <button type="button" (click)="onPasswordReset()">Reset Password</button> -->
+  </div>
+
+  <!-- Old Password and New Password Fields for Password Reset -->
+  <div *ngIf="showNewPasswordField" style="margin-top: 20px;">
+    <label for="oldPassword">Old Password</label>
+    <input
+      id="oldPassword"
+      name="oldPassword"
+      [(ngModel)]="oldPassword"
+      type="password"
+      required
+    />
+    <div *ngIf="form.submitted && !oldPassword">Old Password is required</div>
+
+    <label for="newPassword">New Password</label>
+    <input
+      id="newPassword"
+      name="newPassword"
+      [(ngModel)]="newPassword"
+      type="password"
+      required
+    />
+    <div *ngIf="form.submitted && !newPassword">New Password is required</div>
+    <button type="button" (click)="onUpdatePassword()">Update Password</button>
+  </div>
+</form>

@@ -1,0 +1,163 @@
+<div class="container">
+    <h2>Resumen de Datos</h2>
+    
+    <!-- Consumo de Agua -->
+    <div class="section" *ngIf="schemaData?.consumoDeAgua">
+      <h3>Consumo de Agua</h3>
+      <table>
+        <tr>
+          <th>Fecha de Riego</th>
+          <th>Hora</th>
+          <th>Cantidad Utilizada</th>
+          <th>Agua para Plaguicidas</th>
+        </tr>
+        <tr>
+          <td>{{schemaData?.consumoDeAgua?.fechaRiego || '-'}}</td>
+          <td>{{schemaData?.consumoDeAgua?.hora || '-'}}</td>
+          <td>{{schemaData?.consumoDeAgua?.cantidadAguaUtilizada || '-'}}</td>
+          <td>{{schemaData?.consumoDeAgua?.aguaParaPlaguicidas || '-'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Fertilizantes -->
+    <div class="section" *ngIf="schemaData?.fertilizantes">
+      <h3>Fertilizantes</h3>
+      <table>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Producto</th>
+          <th>Motivo</th>
+        </tr>
+        <tr>
+          <td>{{schemaData?.fertilizantes?.fechaAplicacion || '-'}}</td>
+          <td>{{schemaData?.fertilizantes?.hora || '-'}}</td>
+          <td>{{schemaData?.fertilizantes?.productoAplicado || '-'}}</td>
+          <td>{{schemaData?.fertilizantes?.dosisMochila || '-'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Cosecha -->
+    <div class="section" *ngIf="schemaData?.cosecha">
+      <h3>Cosecha</h3>
+      <table>
+        <tr>
+          <th>Fecha</th>
+          <th>Sector</th>
+          <th>Cantidad Fruto</th>
+          <th>Fruto Rechazado</th>
+          <th>Peso Promedio</th>
+          <th>Lote</th>
+        </tr>
+        <tr>
+          <td>{{schemaData?.cosecha?.fecha || '-'}}</td>
+          <td>{{schemaData?.cosecha?.sector || '-'}}</td>
+          <td>{{schemaData?.cosecha?.cantidadFruto || '-'}}</td>
+          <td>{{schemaData?.cosecha?.frutoRechazado || '-'}}</td>
+          <td>{{schemaData?.cosecha?.pesoPromedio || '-'}}</td>
+          <td>{{schemaData?.cosecha?.loteCosecha || '-'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Tratamiento de Agua -->
+    <div class="section" *ngIf="schemaData?.tratamiento">
+      <h3>Tratamiento de Agua</h3>
+      <table>
+        <tr>
+          <th>Fecha</th>
+          <th>Volumen</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+        </tr>
+        <tr>
+          <td>{{schemaData?.tratamiento?.fecha || '-'}}</td>
+          <td>{{schemaData?.tratamiento?.volumen || '-'}}</td>
+          <td>{{schemaData?.tratamiento?.producto || '-'}}</td>
+          <td>{{schemaData?.tratamiento?.cantidad || '-'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Higiene -->
+    <div class="section" *ngIf="schemaData?.higiene">
+      <h3>Higiene</h3>
+      <table>
+        <tr>
+          <th>Fecha</th>
+          <th>Area Higienizada</th>
+          <th>Productos Utilizados</th>
+        </tr>
+        <tr>
+          <td>{{schemaData?.higiene?.fecha || '-'}}</td>
+          <td>{{schemaData?.higiene?.areaHigienizada || '-'}}</td>
+          <td>{{schemaData?.higiene?.productosUtilizados || '-'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Visitas -->
+    <div class="section" *ngIf="schemaData?.visita">
+      <h3>Control de Visitas</h3>
+      <table>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora Llegada</th>
+          <th>Hora Salida</th>
+          <th>Visitante</th>
+          <th>DPI</th>
+          <th>Personas</th>
+          <th>Vehículo</th>
+          <th>Placas</th>
+        </tr>
+        <tr>
+          <td>{{schemaData?.visita?.fechaVisita || '-'}}</td>
+          <td>{{schemaData?.visita?.horaLlegada || '-'}}</td>
+          <td>{{schemaData?.visita?.horaSalida || '-'}}</td>
+          <td>{{schemaData?.visita?.nombreVisitante || '-'}}</td>
+          <td>{{schemaData?.visita?.numeroDpi || '-'}}</td>
+          <td>{{schemaData?.visita?.cantPersonasVehiculo || '-'}}</td>
+          <td>{{schemaData?.visita?.tipoAutomovil || '-'}}</td>
+          <td>{{schemaData?.visita?.placasVehiculo || '-'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Fitosanitarios -->
+    <div class="section" *ngIf="schemaData?.fitosanitarios">
+      <h3>Fitosanitarios</h3>
+      <table>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Enfermedad</th>
+          <th>Severidad</th>
+          <th>Producto</th>
+          <th>Dosis Mochila</th>
+          <th>Dosis Tonel</th>
+          <th>Cantidad</th>
+          <th>Frecuencia</th>
+        </tr>
+        <tr>
+          <td>{{schemaData?.fitosanitarios?.fechaAplicacion || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.hora || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.enfermedadControl || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.severidad || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.productoAplicado || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.dosisMochila || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.dosisTonel || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.cantidadAplicada || '-'}}</td>
+          <td>{{schemaData?.fitosanitarios?.frecuenciaAplicacion || '-'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="buttons">
+      <button (click)="goBack()">Regresar</button>
+      <button (click)="exportToPDF()">Exportar a PDF</button>
+      <button (click)="exportToNewExcel()">Crear Nuevo Excel</button>
+      <button (click)="appendToExistingExcel()">Agregar a Excel Existente</button>
+    </div>
+

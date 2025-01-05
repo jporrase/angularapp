@@ -228,6 +228,7 @@ const authGuard = () => {
 
 const routes: Routes = [
   { path: 'form', component: FormComponent },
+  { path: '', redirectTo: '/form', pathMatch: 'full' },
   {
     path: '',
     canActivate: [authGuard], // Apply guard once to parent

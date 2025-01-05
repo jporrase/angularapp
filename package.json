@@ -2,9 +2,9 @@
   "name": "angular-starter",
   "private": true,
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build"
+    "start": "node server.js",
+    "build": "ng build" ,
+    "dev": "ng serve --proxy-config proxy.conf.json"
   },
   "dependencies": {
     "@angular/animations": "^18.1.0",
@@ -16,7 +16,9 @@
     "@angular/router": "^18.1.0",
     "@auth0/angular-jwt": "^5.2.0",
     "@types/xlsx": "^0.0.36",
+    "express": "^4.21.2",
     "html2canvas": "^1.4.1",
+    "http-proxy-middleware": "^3.0.3",
     "jsp": "^0.0.2",
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4",
